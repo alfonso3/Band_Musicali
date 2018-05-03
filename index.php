@@ -13,7 +13,7 @@
 				</form>";
 		}
 		else{
-			echo "<script type=\"text/javascript\">window.location.href=\"dashboard.php\";</script>"
+			echo "<script type=\"text/javascript\">window.location.href=\"dashboard.php\";</script>";
 		}
 	?>
 </body>
