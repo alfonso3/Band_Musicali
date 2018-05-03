@@ -1,0 +1,35 @@
+
+div.homeBar {
+	text-align: center;
+	vertical-align: center;
+	font-size: 25px;
+}
+
+.img {
+	width: 20%;
+	height: 20%;
+	vertical-align: middle;
+}
+
+td.date {
+	text-align: center;
+}
+
+td.dashboard {
+	width: 33%;
+	text-align: center;
+}
+
+.dashboardFont {
+	font-family: 'Rakoon';
+	font-size: 40px;
+	text-align: center;
+}
+
+@font-face {   
+
+	font-family: 'Rakoon';     
+  	src: url("../Font/Rakoon.ttf");
+ 
+
+}
