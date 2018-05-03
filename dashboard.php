@@ -2,9 +2,9 @@
 session_start();
 
 
-if(!isset($_SESSION['username']))
+if(isset($_SESSION['username']))
 {
-$_username = "alfonso";
+$_username = $_SESSION['username'];
 $dbHost = "127.0.0.1";
 $dbUsername = "admin";
 $dbPassword = "admin";
