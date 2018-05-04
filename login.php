@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	if(!isset($_SESSION['username']))
+{
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
@@ -29,5 +31,10 @@
 	} else {
 	    echo "Utente inesistente";
 	}
+}
+else
+{
+	echo "<script type=\"text/javascript\">window.location.href=\"dashboard.php\";</script>";
+}
 
 ?>
