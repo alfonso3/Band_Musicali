@@ -100,22 +100,25 @@ echo"
 
 	<center><h4>".date("d/m/y")."</h4></center>
 
-		<table width=\"100%\">
+		<table width=\"100%\" >
 			<tr>
-				<td width=\"30%\">
+				<td width=\"33%\">
 					<a href=\"dashboard.php\"><img src=\"Images/Logo.png\"></a>
 				</td>
 				
-				<td width=\"50%\">
+				<td width=\"33%\">
+				<div class=\"dashboardFont\">
+						Dashboard
+					</div>
 				
 				</td>
 
-				<td width=\"20%\">  
+				<td width=\"33%\">  
 
-				<div class=\"navbar-collapse collapse\">
+				<div class=\"navbar-collapse collapse\" style=\"padding-left: 30%;\">
   					<ul class=\"nav navbar-nav\">
     					<li class=\"dropdown\">
-     						 <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\"><div class=\"homeBar\">".$_username."<img src=\"Images/Img_utente.png\" class=\"img\" ></div></a>
+     						 <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" ><div class=\"homeBar\">".$_username."<img src=\"Images/Img_utente.png\" class=\"img\" ></div></a>
       					<ul class=\"dropdown-menu\">
           					<!-- this dropdown menu item looks right -->
         					<li><a href=\"#\">Profile</a></li>
@@ -137,11 +140,7 @@ echo"
 
 			<tr>
 				<td colspan=\"3\">
-					<div class=\"dashboardFont\">
-						Dashboard
-						<br>
-						<br>
-					</div>
+					<br>
 				</td>
 			</tr> 
 
@@ -214,6 +213,7 @@ echo"
 							</td>
 						</tr>
 
+						<tr>
 							<td align=\"center\"><h1>
 								".$quotaTotale."&euro;</h1>
 							</td>

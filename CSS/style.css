@@ -1,6 +1,6 @@
 
 div.homeBar {
-	text-align: center;
+	text-align: right;
 	vertical-align: center;
 	font-size: 25px;
 }
@@ -9,6 +9,7 @@ div.homeBar {
 	width: 20%;
 	height: 20%;
 	vertical-align: middle;
+	text-align: right;
 }
 
 td.date {
