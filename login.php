@@ -27,9 +27,13 @@
 	            	$_password = $_SESSION['password'];
 	            	echo "<script type=\"text/javascript\">window.location.href=\"dashboard.php\";</script>";
 	            }
+	            else
+	            {
+	            	 header("location: index.php");
+	            }
 	    }
 	} else {
-	    echo "Utente inesistente";
+	 	 header("location: index.php");
 	}
 }
 else

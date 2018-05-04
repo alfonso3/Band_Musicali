@@ -6,12 +6,12 @@ session_start();
 
 if(isset($_SESSION['username']))
 {
-		$servername = "127.0.0.1";
-		$username = "admin";
-		$password = "admin";
-		$dbname = "band";
+		$dbHost = "127.0.0.1";
+	  	$dbUsername = "admin";
+	  	$dbPassword = "admin";
+	  	$dbName = "band";
 
-		$conn = mysqli_connect($servername, $username, $password, $dbname);
+	  	$conn = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);
 
 		if (!$conn) 
 		{

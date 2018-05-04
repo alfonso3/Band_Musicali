@@ -95,6 +95,9 @@ echo"
 	
 	<body>
 
+
+
+
 	<center><h4>".date("d/m/y")."</h4></center>
 
 		<table width=\"100%\">
@@ -107,13 +110,28 @@ echo"
 				
 				</td>
 
-				<td width=\"20%\">
-					<div class=\"homeBar\"><a href=\"#\" data-placement=\"bottom\" data-toggle=\"popover\" title=\"Popover Header\" data-content=\"Some content inside the popover\">".$_username."<img src=\"Images/Img_utente.png\" class=\"img\" ></a></div>
+				<td width=\"20%\">  
+
+				<div class=\"navbar-collapse collapse\">
+  					<ul class=\"nav navbar-nav\">
+    					<li class=\"dropdown\">
+     						 <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\"><div class=\"homeBar\">".$_username."<img src=\"Images/Img_utente.png\" class=\"img\" ></div></a>
+      					<ul class=\"dropdown-menu\">
+          					<!-- this dropdown menu item looks right -->
+        					<li><a href=\"#\">Profile</a></li>
+
+        					<!-- this dropdown menu item (a logout form) does not -->
+        					<li><form action=\"logout.php\" method=\"post\"><button type=\"submit\" class=\"btn btn-link navbar-btn navbar-link\">Logout</button></form></li>
+        				</ul>
+    				</li>
+  </ul>
+</div>
+
+					
 				</td>
 			</tr>
 		</table>
 
-		<br>
 
 		<table width=\"100%\">
 
@@ -143,7 +161,6 @@ echo"
 
 		</table>
 
-		<br>
 		<br>
 
 		<table width=\"100%\">
