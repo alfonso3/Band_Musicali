@@ -75,6 +75,29 @@ echo"
 		<!-- Latest compiled JavaScript -->
 		<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
 
+		<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById(\"myDropdown\").classList.toggle(\"show\");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName(\"dropdown-content\");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
 
     <script>
 		$(document).ready(function()
@@ -93,7 +116,7 @@ echo"
 	</script>
 	</head>
 	
-	<body>
+	<body >
 
 
 
@@ -121,7 +144,7 @@ echo"
      						 <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" ><div class=\"homeBar\">".$_username."<img src=\"Images/Img_utente.png\" class=\"img\" ></div></a>
       					<ul class=\"dropdown-menu\">
           					<!-- this dropdown menu item looks right -->
-        					<li><a href=\"#\">Profile</a></li>
+        					
 
         					<!-- this dropdown menu item (a logout form) does not -->
         					<li><form action=\"logout.php\" method=\"post\"><button type=\"submit\" class=\"btn btn-link navbar-btn navbar-link\">Logout</button></form></li>
@@ -146,7 +169,15 @@ echo"
 
 			<tr>
 				<td  class=\"dashboard\">
-					<input type=\"button\" style=\"background-color: #ff5656; color: white; font-weight: bold;\" class=\"btn btn-default btn-lg btn-block\" name=\"\" value=\"Nuovo\">
+
+<div class=\"dropdown\">
+<button onclick=\"myFunction()\" class=\"dropbtn btn btn-default btn-lg btn-block\" style=\"background-color: #ff5656; color: white; font-weight: bold;\" >Nuovo</button>
+  <div id=\"myDropdown\" class=\"dropdown-content\">
+    <a style=\"color: #ff5656;\" href=\"insLocale.php\">Locale</a>
+    <a style=\"color: #ff5656;\" href=\"insConcerto.php\">Concerto</a>
+  </div>
+</div>
+
 				</td>
 				
 				<td class=\"dashboard\">
@@ -161,16 +192,18 @@ echo"
 		</table>
 
 		<br>
+		<br>
+		<br>
 
 		<table width=\"100%\">
 
 			<tr>
 				<td>
-					<table align=\"center\" width=\"70%\" >
+					<table align=\"center\" width=\"70%\" class=\"tabella\">
 
 						<tr>
-							<td colspan=\"3\" style=\"color: white; background-color: #ff5656;\">
-								<h2 align=\"center\" >Concerti<br><hr width=\"100%\"></h2>
+							<td colspan=\"3\" style=\" background-color: #ff5656;\">
+								<h2 align=\"center\" style=\"color: white\">Concerti<br></h2><hr width=\"100%\">
 							</td>
 						</tr>
 
