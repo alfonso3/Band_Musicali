@@ -165,13 +165,33 @@ window.onclick = function(event) {
 				</td>
 			</tr>
 
-		</table><form name=insLocale action=insLocale.php method=post>
-						<input name=nome type=text placeholder=Nome locale required>
-						<input name=regione type=text placeholder=Regione required>
-						<input name=citta type=text placeholder=Citt&agrave required>" . "<br>" .
-						"<input name=indirizzo type=text placeholder=Indirizzo required>
-						<input name=tipoLocale type=text placeholder=Tipo locale required>
-						<select name=direttoreArtistico>
+		</table>
+<br><br><br>
+		<form name=insLocale action=insLocale.php method=post>
+
+		<table align=\"center\" width=\"60%\" style=\"font-weight: bold;\" class=\"tabella\">
+			<tr>
+				<td style=\"text-align: center; background-color:#ff5656; border: solid 1px black;\" colspan=\"5\" ><h2 style=\"color: white; \">Aggiungi</h2></td>
+			</tr>
+			<tr>
+			<td><br><br></td>
+			</tr>
+			<tr>
+			<td width=\"10%\" style=\"text-align: center;\"><input name=nome type=text placeholder=Nome locale required></td>
+			<td></td>
+			<td width=\"10%\" style=\"text-align: center;\"><input name=regione type=text placeholder=Regione required></td>
+			<td></td>
+			<td width=\"10%\" style=\"text-align: center;\"><input name=citta type=text placeholder=Citt&agrave required></td>
+			</tr>
+			<tr>
+			<td><br><br><br></td>
+			</tr>
+			<tr>
+			<td width=\"10%\" style=\"text-align: center;\"><input name=indirizzo type=text placeholder=Indirizzo required></td>
+			<td></td>
+			<td width=\"10%\" style=\"text-align: center;\"><input name=tipoLocale type=text placeholder=Tipo locale required></td>
+			<td></td>
+			<td width=\"10%\" style=\"text-align: center;\"><select name=direttoreArtistico>
 						<option value=\'\'>Direttore artistico</option>
 						";
 
@@ -179,8 +199,24 @@ window.onclick = function(event) {
 					{
 						echo "<option value=\"".$arrayID_DirettoreArtistico[$i]." required\">".$arrayDirettoreArtisticoC[$i]."</option>";
 					}
-					echo "</select>	
-						 <input name=btnInsLocale type=submit>
+					echo "</select>	</td>
+			</tr>
+
+			<tr>
+			<td><br><br><br></td>
+			</tr>
+
+			<tr>
+				<td style=\"text-align: center;\" colspan=\"5\"><input name=btnInsLocale type=submit></td>
+			</tr>
+
+			<tr>
+			<td><br></td>
+			</tr>
+
+		</table>
+
+						 
 						 </form>";
 
 			}

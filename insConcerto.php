@@ -195,28 +195,67 @@ window.onclick = function(event) {
 			</tr>
 
 		</table>
-			<form method =\"POST\" action=\"insConcerto.php\">
-			Data(aaaa-mm-gg)<input type=\"text\" name=\"data\">
-			Ora(hh:mm:ss)<input type=\"text\" name=\"ora\">
-			Compenso pattuito<input type=\"text\" name=\"compensoPattuito\">
-			Compenso effettivo<input type=\"text\" name=\"compensoEffettivo\">";
 
-						echo"Locale";
-						echo"<td align=\"center\"><select name=\"locale\">";
+
+
+
+<br><br><br>
+
+
+<form method =\"POST\" action=\"insConcerto.php\">
+
+
+		<table align=\"center\" width=\"60%\" style=\"font-weight: bold;\" class=\"tabella\">
+			<tr>
+				<td style=\"text-align: center; background-color:#ff5656; border: solid 1px black;\" colspan=\"5\" ><h2 style=\"color: white; \">Aggiungi</h2></td>
+			</tr>
+			<tr>
+			<td><br><br></td>
+			</tr>
+			<tr>
+			<td width=\"10%\" style=\"text-align: center;\"><br><input type=\"date\" name=\"data\" required></td>
+			<td></td>
+			<td width=\"10%\" style=\"text-align: center;\"><br><input type=\"time\" name=\"ora\" required></td>
+			<td></td>
+			<td width=\"10%\" style=\"text-align: center;\">Locale<br><select name=\"locale\">";
 						for($i=0;$i<$nLocali; $i++)
 						{
 							echo "<option value=\"".$idLocale[$i]."\">".$locali[$i]."</option>";
 						}
-						echo"</select>";
-						echo"Band";
-						echo"<td align=\"center\"><select name=\"band\">";
+						echo"</select></td>
+			</tr>
+			<tr>
+			<td><br><br><br></td>
+			</tr>
+			<tr>
+			<td width=\"10%\" style=\"text-align: center;\"><br><input type=\"text\" name=\"compensoEffettivo\" placeholder=\"Compenso effettivo\" required></td>
+			<td></td>
+			<td width=\"10%\" style=\"text-align: center;\"><br><input type=\"text\" name=\"compensoPattuito\" placeholder=\"Compenso pattuito\" required></td>
+			<td></td>
+			<td width=\"10%\" style=\"text-align: center;\">Band<br><select name=\"band\">";
 						for($i=0;$i<$nBand; $i++)
 						{
 							echo "<option value=\"".$idBand[$i]."\">".$band[$i]."</option>";
 						}
-						echo"</select>";
+						echo"</select>	</td>
+			</tr>
 
-			echo"<input type =\"submit\" value=\"invia\" name=\"button\"><br>
+			<tr>
+			<td><br><br><br></td>
+			</tr>
+
+			<tr>
+				<td style=\"text-align: center;\" colspan=\"5\"><input type =\"submit\" value=\"invia\" name=\"button\"></td>
+			</tr>
+
+			<tr>
+			<td><br></td>
+			</tr>
+
+		</table>
+			
+			
+	
 			</form>
 			";
 			}
