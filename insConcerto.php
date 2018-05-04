@@ -4,7 +4,7 @@ session_start();
 
 
 
-if(isset($_POST['username']))
+if(isset($_SESSION['username']))
 {
 		$servername = "127.0.0.1";
 		$username = "admin";

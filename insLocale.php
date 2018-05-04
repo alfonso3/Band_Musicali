@@ -14,7 +14,7 @@
 	  	if (!$conn) {
 	    	die("Connection failed: " . mysqli_connect_error());
 		}
-		if(!isset($_SESSION["username"])){
+		if(isset($_SESSION["username"])){
 			if(!isset($_POST["btnInsLocale"]))
 			{
 					$sql = "SELECT Nome, Cognome, ID FROM rdirettoreartistico";
