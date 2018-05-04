@@ -245,7 +245,7 @@ window.onclick = function(event) {
 			</tr>
 
 			<tr>
-				<td style=\"text-align: center;\" colspan=\"5\"><input type =\"submit\" value=\"invia\" name=\"button\"></td>
+				<td style=\"text-align: center;\" colspan=\"5\"><input type =\"submit\" name=\"button\"></td>
 			</tr>
 
 			<tr>
