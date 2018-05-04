@@ -202,8 +202,8 @@ window.onclick = function(event) {
 					<table align=\"center\" width=\"70%\" class=\"tabella\">
 
 						<tr>
-							<td colspan=\"3\" style=\" background-color: #ff5656;\">
-								<h2 align=\"center\" style=\"color: white\">Concerti<br></h2><hr width=\"100%\">
+							<td colspan=\"3\" style=\" background-color: #ff5656; border: solid 1px black;\" >
+								<h2 align=\"center\" style=\"color: white\">Concerti<br></h2>
 							</td>
 						</tr>
 

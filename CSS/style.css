@@ -4,6 +4,11 @@
 
 }
 
+hr {
+    color: black; !important
+    border-top: black; !important
+}
+
 div.homeBar {
 	text-align: right;
 	vertical-align: center;
