@@ -52,13 +52,11 @@
 		<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
 
 		<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
+
 function myFunction() {
     document.getElementById(\"myDropdown\").classList.toggle(\"show\");
 }
 
-// Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
 
@@ -237,6 +235,7 @@ window.onclick = function(event) {
 				  	  $error="Error: " . $sql . "<br>" . mysqli_error($conn);
 				      echo "<script>alert(\"".$error."\");</script>";
 				  }
+				 header("location: dashboard.php");
 			}
 		}
 		else{

@@ -50,7 +50,7 @@ if(isset($_SESSION['username']))
 			}
 			else
 			{
-				echo "0 results";
+				
 			}
 
 
@@ -269,9 +269,6 @@ window.onclick = function(event) {
 				$IDband=$_POST['band'];
 
 
-				echo "$IDlocale";
-
-
 
 					$sql = "INSERT INTO rconcerto(Data, Ora, compensoPattuito, compensoEffettivo, ID_Band, ID_Locale) VALUES ('$data', '$ora', '$compensoPattuito', '$compensoEffettivo', '$IDband','$IDlocale')";
 
@@ -281,6 +278,7 @@ window.onclick = function(event) {
 					  	$error="Error: " . $sql . "<br>" . mysqli_error($conn);
 					      echo "<script>alert(\"".$error."\");</script>";
 					  }
+					 
 
 			}
 		}
