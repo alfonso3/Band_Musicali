@@ -40,7 +40,7 @@ else
 		$arrayCittaEventi[]="";
 		$arrayDataEventi[]="";
 
-		$sql2 = "SELECT rlocale.Nome, rlocale.Citta, rconcerto.Data FROM rconcerto INNER JOIN rlocale ON rconcerto.ID_Locale = rlocale.ID WHERE rconcerto.CompensoEffettivo='NULL'";
+		$sql2 = "SELECT rlocale.Nome, rlocale.Citta, rconcerto.Data FROM rconcerto INNER JOIN rlocale ON rconcerto.ID_Locale = rlocale.ID WHERE rconcerto.CompensoEffettivo='0'";
 
 		$result = mysqli_query($conn, $sql2);
 		if (mysqli_num_rows($result) > 0) 
