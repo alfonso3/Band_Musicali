@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if(isset($_SESSION['username']))
 {
 	$dbHost = "127.0.0.1";
@@ -14,11 +15,11 @@ if(isset($_SESSION['username']))
 	}
 	else
 	{
-		echo $_SESSION["ordine"];
+		
 					if(!isset($_SESSION['ordine']))
 						{
 							//recupera dati eventi passati
-							$sql1 = "SELECT rlocale.Nome, rlocale.Citta, rconcerto.Data, rconcerto.Ora, rconcerto.CompensoPattuito, rconcerto.CompensoEffettivo FROM rconcerto INNER JOIN rlocale ON rconcerto.ID_Locale = rlocale.ID WHERE rconcerto.CompensoEffettivo!='NULL'";
+							$sql1 = "SELECT rlocale.Nome, rlocale.Citta, rconcerto.Data, rconcerto.Ora, rconcerto.CompensoPattuito, rconcerto.CompensoEffettivo FROM rconcerto INNER JOIN rlocale ON rconcerto.ID_Locale = rlocale.ID WHERE rconcerto.CompensoEffettivo!='0'";
 
 							$result = mysqli_query($conn, $sql1);
 
@@ -69,16 +70,16 @@ if(isset($_SESSION['username']))
 			    		}
 			    		else
 			    		{
-			    			if($_SESSION["ordine"] == "crescente")
+			    			if($_SESSION['ordine'] == "crescente")
 			    			{
-			    					//echo"crescenteeee";
+			    					
 
-			    					//malfunzionamento
+			    					
 			    			}
 
-			    			if($_SESSION["ordine"] == "decrescente")
+			    			if($_SESSION['ordine'] == "decrescente")
 			    			{
-			    					//echo"decrescenteeeee";
+			    				
 			    			}	
 			    		}
 		    
@@ -89,36 +90,39 @@ else
 	header("location: index.php");
 }
 
-	echo"<script>
-
-		function ordinamentoEventi()
-		{
-			var scelta=document.getElementById(\"ordinamento\").value;
-
-			if(scelta == \"crescente\")
-			{
-				"; $_SESSION["ordine"] = 'crescente';
-					//scelta viene valorizzato correttamente ed entra nell'if
-				echo"
-				window.location.href = 'storico.php';
-				
-
-			}
-			
-			if(scelta == \"decrescente\")
-			{
-				"; $_SESSION["ordine"] = 'decrescente';
-					//scelta viene valorizzato correttamente ed entra nell'if
-				echo"
-				window.location.href = 'storico.php';
-				
-			}
-			
-		}
-
-		</script>";
-
-
+	
 
 
 ?>
+
+<script>
+
+		function ordinamentoEventi()
+		{
+			var scelta=document.getElementById('ordinamento').value;
+
+			if(scelta == 'crescente')
+			{
+				alert("sono nell'if");
+				alert(scelta);
+				<?php $_SESSION['ordine'] = 'crescente';?>
+				window.location.href = 'storico.php';
+
+			}		
+			else
+			{
+				alert("sono nell'else");
+				alert(scelta);
+				<?php 
+				if(!isset($_SESSION['ordine']))
+				{
+					$_SESSION['ordine'] = 'decrescente'; 
+				}				
+				?>
+				window.location.href = 'storico.php';
+			}
+
+
+		}
+
+</script>

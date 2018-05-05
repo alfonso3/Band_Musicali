@@ -273,10 +273,12 @@ window.onclick = function(event) {
 					$sql = "INSERT INTO rconcerto(Data, Ora, compensoPattuito, compensoEffettivo, ID_Band, ID_Locale) VALUES ('$data', '$ora', '$compensoPattuito', '$compensoEffettivo', '$IDband','$IDlocale')";
 
 						if (mysqli_query($conn, $sql)) {
-					      echo "<script>alert(\"Riga aggiunta\");</script>";
+					      echo "<script>alert(\"Concerto aggiunto\");</script>";
+					      header("location: insConcerto.php");
 					  } else {
 					  	$error="Error: " . $sql . "<br>" . mysqli_error($conn);
 					      echo "<script>alert(\"".$error."\");</script>";
+					      header("location: insConcerto.php");
 					  }
 					 
 

@@ -52,10 +52,6 @@ else
 				$arrayDataEventi[]=$row["Data"];
 			} 
 		}
-		else
-	    {
-	    echo "0 results";
-		}
 }
 
 
