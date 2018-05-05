@@ -228,7 +228,7 @@ window.onclick = function(event) {
 			<td><br><br><br></td>
 			</tr>
 			<tr>
-			<td width=\"10%\" style=\"text-align: center;\"><br><input type=\"text\" name=\"compensoEffettivo\" placeholder=\"Compenso effettivo\" required></td>
+			<td width=\"10%\" style=\"text-align: center;\"><br><input type=\"text\" name=\"compensoEffettivo\" placeholder=\"Compenso effettivo\"></td>
 			<td></td>
 			<td width=\"10%\" style=\"text-align: center;\"><br><input type=\"text\" name=\"compensoPattuito\" placeholder=\"Compenso pattuito\" required></td>
 			<td></td>
