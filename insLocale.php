@@ -195,7 +195,7 @@ window.onclick = function(event) {
 
 					for($i=1;$i<count($arrayDirettoreArtisticoN);$i++)
 					{
-						echo "<option value=\"".$arrayID_DirettoreArtistico[$i]." required\">".$arrayDirettoreArtisticoC[$i]."</option>";
+						echo "<option value=\"".$arrayID_DirettoreArtistico[$i]."\" required>".$arrayDirettoreArtisticoC[$i]."</option>";
 					}
 					echo "</select>	</td>
 			</tr>

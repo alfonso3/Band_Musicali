@@ -39,6 +39,7 @@
 			}
 		} 
 
+
 		$sql2 = "SELECT * FROM rdirettoreartistico";
 		$result2 = mysqli_query($conn, $sql2);
 
@@ -59,7 +60,7 @@
 			}
 		} 
 
-		$sql3 = "SELECT DISTINCT Regione FROM rlocale";
+	  	$sql3 = "SELECT DISTINCT Regione FROM rlocale";
 		$result3 = mysqli_query($conn, $sql3);
 
 		if (mysqli_num_rows($result3) > 0) {
@@ -69,15 +70,18 @@
 		      $arrayRegioni[$indiceReg] = $row["Regione"];
 			  $indiceReg++;
 			}
-		} 
+		}
+
 	if(isset($_SESSION["username"])){
-		echo $_SESSION["regione"];
-		if(!isset($_SESSION['regione'])){
+
+	  if(!isset($_POST["btnInviaRegione"])){
+
 		for($i=0;$i<mysqli_num_rows($result);$i++){
 				for($k=0;$k<mysqli_num_rows($result2);$k++){
 					if($arrayIDSecondario[$i]===$arrayIDDir[$k])
 					{
-						echo "<details>
+						echo "<form name=dettagli method=post action=rubrica.php>
+							<details>
 							<summary>". $arrayNomeLocale[$i] . ", " . $arrayCittàLocale[$i]  . "</summary>
 							<div>Indirizzo:&ensp;$arrayIndirizzoLocale[$i]</div>
 							<div>Regione:&ensp;$arrayRegioneLocale[$i]</div>
@@ -94,60 +98,126 @@
 
 
 
-			echo "<select id=regione name=regione onchange=sceltaRegione()>
-					<option value='\'\></option>";
+			echo "<select name=regione>
+					<option value=tutti>Tutti</option>";
 
 					for($i=0;$i<count($arrayRegioni);$i++)
 					{
-						echo "<option value=\"".$arrayRegioni[$i]." required\">".$arrayRegioni[$i]."</option>";
+						echo "<option value=$arrayRegioni[$i]>$arrayRegioni[$i]</option>";
 					}
-					echo "</select>	";
-		}
-		else{
-		    if($_SESSION['regione'] == "Puglia")
-			{
-			  echo "porcamdonna";		
+					echo "</select>	
+					<input type=submit name=btnInviaRegione>
+					</form>";		
+	  }
+	  else
+	  {
+	  	if($_POST["regione"]==='tutti'){
+		for($i=0;$i<mysqli_num_rows($result);$i++){
+				for($k=0;$k<mysqli_num_rows($result2);$k++){
+					if($arrayIDSecondario[$i]===$arrayIDDir[$k])
+					{
+						echo "<form name=dettagli method=post action=rubrica.php>
+							<details>
+							<summary>". $arrayNomeLocale[$i] . ", " . $arrayCittàLocale[$i]  . "</summary>
+							<div>Indirizzo:&ensp;$arrayIndirizzoLocale[$i]</div>
+							<div>Regione:&ensp;$arrayRegioneLocale[$i]</div>
+							<div>Tipo:&ensp;$arrayTipoLocale[$i]</div>
+							<details>
+								<summary>". $arrayNomeDir[$k] . ", " . $arrayCognomeDir[$k]  . "</summary>
+								<div>Email:&ensp;$arrayEmailDir[$k]</div>
+								<div>Tel:&ensp;$arrayTelefonoDir[$k]</div>
+							</details>
+						</details><br>";	
+					}
+				}	
 			}
 
-			if($_SESSION['regione'] == "Lombardia")
-			{
-			  echo "porcodio";
+
+
+			echo "<select name=regione>
+					<option value=tutti>Tutti</option>";
+
+					for($i=0;$i<count($arrayRegioni);$i++)
+					{
+						echo "<option value=$arrayRegioni[$i]>$arrayRegioni[$i]</option>";
+					}
+					echo "</select>	
+					<input type=submit name=btnInviaRegione>
+					</form>";		
+	  	}
+	  	else{
+		  	$regione = $_POST["regione"];
+		  	echo $regione ;
+
+			$sql = "SELECT * FROM rlocale WHERE Regione = '$regione'";
+			$result = mysqli_query($conn, $sql);
+
+			if (mysqli_num_rows($result) > 0) {
+				$arrayIDLocale[] = ""; //id
+				$arrayTipoLocale[] = ""; //tipo
+				$arrayIndirizzoLocale[] = ""; //indirizzo
+				$arrayNomeLocale[] = ""; //nome
+				$arrayRegioneLocale[] = ""; //regione
+				$arrayCittàLocale[] = ""; //città
+				$arrayIDSecondario[] = ""; //id secondario direttore artistico
+				$indiceLocale=0;
+			    while($row = mysqli_fetch_assoc($result) ) {
+			      $arrayIDLocale[$indiceLocale] = $row["ID"];
+				  $arrayTipoLocale[$indiceLocale] = $row["Tipo"];
+				  $arrayIndirizzoLocale[$indiceLocale] = $row["Indirizzo"];
+				  $arrayNomeLocale[$indiceLocale] = $row["Nome"];
+				  $arrayRegioneLocale[$indiceLocale] = $row["Regione"];
+				  $arrayCittàLocale[$indiceLocale] = $row["Citta"];
+				  $arrayIDSecondario[$indiceLocale] = $row["ID_DirettoreArtistico"];
+				  $indiceLocale++;
+				}
 			}
-		}			
+			 
+			for($i=0;$i<mysqli_num_rows($result);$i++){
+					for($k=0;$k<mysqli_num_rows($result2);$k++){
+						if($arrayIDSecondario[$i]===$arrayIDDir[$k])
+						{
+							echo "<form name=dettagli method=post action=rubrica.php>
+								<details>
+								<summary>". $arrayNomeLocale[$i] . ", " . $arrayCittàLocale[$i]  . "</summary>
+								<div>Indirizzo:&ensp;$arrayIndirizzoLocale[$i]</div>
+								<div>Regione:&ensp;$arrayRegioneLocale[$i]</div>
+								<div>Tipo:&ensp;$arrayTipoLocale[$i]</div>
+								<details>
+									<summary>". $arrayNomeDir[$k] . ", " . $arrayCognomeDir[$k]  . "</summary>
+									<div>Email:&ensp;$arrayEmailDir[$k]</div>
+									<div>Tel:&ensp;$arrayTelefonoDir[$k]</div>
+								</details>
+							</details><br>";	
+						}
+					}	
+				}		 
+
+				echo "<select name=regione>
+				<option value=$regione>$regione</option>";
+
+				for($i=0;$i<count($arrayRegioni);$i++)
+				{
+					if($regione === $arrayRegioni[$i]){
+						
+					}
+					else{
+						echo "<option value=$arrayRegioni[$i]>$arrayRegioni[$i]</option>";	
+					}
+				}
+				echo "<option value=tutti>Tutti</option>
+				</select>	
+				<input type=submit name=btnInviaRegione>
+				</form>";	
+	  	}
+	  }	
+			
    }
     else{
 		echo "<script type=\"text/javascript\">window.location.href=\"dashboard.php\";</script>";
 	}
 
   ?>
-
-<script>
-
-		function sceltaRegione()
-		{
-			var scelta=document.getElementById('regione').value;
-
-			if(scelta == 'Puglia')
-			{
-				<?php $_SESSION['regione'] = 'Puglia'; ?>
-				window.location.href = 'rubrica.php';
-
-			}		
-			else
-			{
-				<?php
-					if(!isset($_SESSION['regione']))
-					{
-						$_SESSION['regione'] = 'Lombardia'; 
-					}			
-				?>
-				window.location.href = 'rubrica.php';
-			}
-
-
-		}
-
-</script>
 
 </body>
 </html>

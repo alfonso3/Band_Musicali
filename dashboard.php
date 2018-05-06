@@ -20,13 +20,13 @@ else
 		//query per saldo totale
 
 		$quotaTotale=0;
-		$sql1 = "SELECT CompensoPattuito FROM rconcerto WHERE CompensoEffettivo = '0'";
+		$sql1 = "SELECT CompensoPattuito FROM rconcerto";
 		$result = mysqli_query($conn, $sql1);
 		if (mysqli_num_rows($result) > 0) 
 		{
 		    while($row = mysqli_fetch_assoc($result))
 		    {
-		    	$quotaTotale=$quotaTotale+$row["CompensoPattuito"];
+		    	$quotaTotale=$quotaTotale+$row["CompensoEffettivo"];
 			} 
 		}
 		else
