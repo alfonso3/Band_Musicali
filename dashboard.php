@@ -33,6 +33,15 @@ else
 	    {
 	    
 		}
+		echo "<script type=\"text/javascript\">alert(\"fuori\");</script>";
+
+		if(isset($_POST['paga']))
+		{
+			echo "<script type=\"text/javascript\">alert(\"dentro\");</script>";
+			echo $_POST['paga'];
+			$sqlpag = "UPDATE `rconcerto` SET `CompensoEffettivo`=[value-5] WHERE 'Data' = ";
+			mysqli_query($conn, $sqlpag);
+		}
 
 		//query per eventi in programma
 
@@ -197,6 +206,7 @@ window.onclick = function(event) {
 
 			<tr>
 				<td>
+					<form action=\"dashboard.php\" method=\"post\">
 					<table align=\"center\" width=\"70%\" class=\"tabella\" >
 
 						<tr>
@@ -232,11 +242,12 @@ window.onclick = function(event) {
 							echo"</h4></td><td align=\"center\" width=\"30%\"><h4>";
 							echo $arrayDataEventi[$i]." ";
 							echo "</h4></td>
-							<td align=\"center\" width=\"10%\"><input type=\"button\" style=\"width: 100%; heigth:100%;\" value=\"Pagato\"></td></tr>";
+							<td align=\"center\" width=\"10%\"><button type=\"submit\" style=\"width: 100%;\" name=\"paga\" value=\"".$arrayDataEventi[$i]."\">Pagato</button></td></tr>";
 						}
 
 						echo"
 					</table>
+					</form>
 				</td>
 
 				<td>
