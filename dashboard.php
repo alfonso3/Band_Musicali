@@ -31,7 +31,7 @@ else
 		}
 		else
 	    {
-	    echo "0 results";
+	    
 		}
 
 		//query per eventi in programma
@@ -40,7 +40,7 @@ else
 		$arrayCittaEventi[]="";
 		$arrayDataEventi[]="";
 
-		$sql2 = "SELECT rlocale.Nome, rlocale.Citta, rconcerto.Data FROM rconcerto INNER JOIN rlocale ON rconcerto.ID_Locale = rlocale.ID WHERE rconcerto.CompensoEffettivo='0'";
+		$sql2 = "SELECT rlocale.Nome, rlocale.Citta, rconcerto.Data FROM rconcerto INNER JOIN rlocale ON rconcerto.ID_Locale = rlocale.ID WHERE rconcerto.CompensoEffettivo='0' or CompensoEffettivo IS NULL";
 
 		$result = mysqli_query($conn, $sql2);
 		if (mysqli_num_rows($result) > 0) 
@@ -197,10 +197,10 @@ window.onclick = function(event) {
 
 			<tr>
 				<td>
-					<table align=\"center\" width=\"70%\" class=\"tabella\">
+					<table align=\"center\" width=\"70%\" class=\"tabella\" >
 
 						<tr>
-							<td colspan=\"3\" style=\" background-color: #ff5656; border: solid 1px black;\" >
+							<td colspan=\"4\" style=\" background-color: #ff5656; border: solid 1px black;\" >
 								<h2 align=\"center\" style=\"color: white\">Concerti<br></h2>
 							</td>
 						</tr>
@@ -215,20 +215,24 @@ window.onclick = function(event) {
 							<td style=\"background-color: #ff5656; color: white;\">
 								<h3 align=\"center\">Data</h3>
 							</td>
+							<td style=\"background-color: #ff5656; color: white;\">
+								<h3 align=\"center\">Importo</h3>
+							</td>
 						</tr>
 
 
 
 						";
-						for($i=0;$i<count($arrayNomeEventi);$i++)
+						for($i=1;$i<count($arrayNomeEventi);$i++)
 						{
-							echo"<tr><td align=\"center\" width=\"33%\"><h4>";
+							echo"<tr><td align=\"center\" width=\"30%\"><h4>";
 							echo $arrayNomeEventi[$i]." ";
-							echo"</h4></td><td align=\"center\" width=\"33%\"><h4>";
+							echo"</h4></td><td align=\"center\" width=\"30%\"><h4>";
 							echo $arrayCittaEventi[$i]." ";
-							echo"</h4></td><td align=\"center\" width=\"33%\"><h4>";
+							echo"</h4></td><td align=\"center\" width=\"30%\"><h4>";
 							echo $arrayDataEventi[$i]." ";
-							echo "</h4></td></tr>";
+							echo "</h4></td>
+							<td align=\"center\" width=\"10%\"><input type=\"button\" style=\"width: 100%; heigth:100%;\" value=\"Pagato\"></td></tr>";
 						}
 
 						echo"
