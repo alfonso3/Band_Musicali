@@ -229,13 +229,13 @@ window.onclick = function(event) {
 				 $sql = "INSERT INTO rlocale(Tipo, Indirizzo, Nome, Regione, Citta, ID_DirettoreArtistico) VALUES ('$Tipo', '$Indirizzo', '$Nome', '$Regione', '$Citta', '$ID_DirettoreArtistico')";
 
 				 if (mysqli_query($conn, $sql)) {
-				      echo "<script>alert(\"Locale  Aggiunto\");</script>";
+				      //echo "<script>alert(\"Locale  Aggiunto\");</script>";
 				 } 
 				 else {
 				  	  $error="Error: " . $sql . "<br>" . mysqli_error($conn);
-				      echo "<script>alert(\"".$error."\");</script>";
+				      //echo "<script>alert(\"".$error."\");</script>";
 				  }
-				 header("location: dashboard.php");
+				 header("location: insLocale.php");
 			}
 		}
 		else{
