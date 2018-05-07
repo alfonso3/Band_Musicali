@@ -3,6 +3,7 @@ session_start();
 
 if(isset($_SESSION['username']))
 {
+	$_username = $_SESSION['username'];
 	$dbHost = "127.0.0.1";
   	$dbUsername = "admin";
   	$dbPassword = "admin";
@@ -47,12 +48,141 @@ if(isset($_SESSION['username']))
 							echo "0 results";
 							}
 
-							echo"Eventi in ordine casuale";
+							echo"<!DOCTYPE html>
+<html>
+	
+	<head>
+		<title>DPR Band</title>
+		<link href=\"CSS/style.css\" rel=\"stylesheet\" type=\"text/css\">
+		<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">
 
+		<!-- jQuery library -->
+		<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
+		
+		<!-- Latest compiled JavaScript -->
+		<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
+		<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">
+
+		<script>
+
+function myFunction() {
+    document.getElementById(\"myDropdown\").classList.toggle(\"show\");
+}
+
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName(\"dropdown-content\");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
+    <script>
+		$(document).ready(function()
+		{
+   			$('[data-toggle=\"popover\"]').popover();
+		});
+	</script>
+	<script>
+	function storico() {
+		window.location.href = 'storico.php';
+	}
+
+	function rubrica() {
+		window.location.href = 'rubrica.php';
+	}
+	</script>
+	</head>
+	
+	<body >
+
+
+
+
+	<center><h4>".date("d/m/y")."</h4></center>
+
+		<table width=\"100%\" >
+			<tr>
+				<td width=\"33%\">
+					<a href=\"dashboard.php\"><img src=\"Images/Logo.png\"></a>
+				</td>
+				
+				<td width=\"33%\">
+				<div class=\"dashboardFont\">
+						Storico
+					</div>
+				
+				</td>
+
+				<td width=\"33%\">  
+
+				<div class=\"navbar-collapse collapse\" style=\"padding-left: 30%;\">
+  					<ul class=\"nav navbar-nav\">
+    					<li class=\"dropdown\">
+     						 <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" ><div class=\"homeBar\">".$_username."<img src=\"Images/Img_utente.png\" class=\"img\" ></div></a>
+      					<ul class=\"dropdown-menu\">
+          					<!-- this dropdown menu item looks right -->
+        					
+
+        					<!-- this dropdown menu item (a logout form) does not -->
+        					<li><form action=\"logout.php\" method=\"post\"><button type=\"submit\" class=\"btn btn-link navbar-btn navbar-link\">Logout</button></form></li>
+        				</ul>
+    				</li>
+  </ul>
+</div>
+
+					
+				</td>
+			</tr>
+		</table>
+
+
+		<table width=\"100%\">
+
+			<tr>
+				<td colspan=\"3\">
+					<br>
+				</td>
+			</tr> 
+
+			<tr>
+				<td  class=\"dashboard\">
+
+<div class=\"dropdown\">
+<button onclick=\"myFunction()\" class=\"dropbtn btn btn-default btn-lg btn-block\" style=\"background-color: #ff5656; color: white; font-weight: bold;\" >Nuovo</button>
+  <div id=\"myDropdown\" class=\"dropdown-content\">
+    <a style=\"color: #ff5656;\" href=\"insLocale.php\">Locale</a>
+    <a style=\"color: #ff5656;\" href=\"insConcerto.php\">Concerto</a>
+    <a style=\"color: #ff5656;\" href=\"insDirettore.php\">Direttore artistico</a>
+  </div>
+</div>
+
+				</td>
+				
+				<td class=\"dashboard\">
+					<input type=\"button\" style=\"background-color: #ff5656; color: white; font-weight: bold;\" class=\"btn btn-default btn-lg btn-block\" name=\"\" value=\"Storico\" onclick=\"storico()\">
+				</td>
+
+				<td class=\"dashboard\">
+					<input type=\"button\" style=\"background-color: #ff5656; color: white; font-weight: bold;\" class=\"btn btn-default btn-lg btn-block\" name=\"\" value=\"Rubrica\" onclick=\"rubrica()\">
+				</td>
+			</tr>
+
+		</table>
+<form action=\"storico.php\" method=\"POST\">";
 							for($i=0;$i<$nEventi;$i++)
 							{
 								
-								echo"	<form action=\"storico.php\" method=\"POST\">
+								echo"	
 										<details>
 										<summary>".$cittaLocale[$i]." ".$dataConcerto[$i]."</summary>
 										<div>Ora di inizio: ".$oraConcerto[$i]."</div>
@@ -110,12 +240,139 @@ if(isset($_SESSION['username']))
 							echo "0 results";
 							}
 			    			
-							echo"Eventi in ordine di guadagno crescente";
+							echo"
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<title>DPR Band</title>
+		<link href=\"CSS/style.css\" rel=\"stylesheet\" type=\"text/css\">
+		<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">
+
+		<!-- jQuery library -->
+		<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
+		
+		<!-- Latest compiled JavaScript -->
+		<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
+		<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">
+
+		<script>
+
+function myFunction() {
+    document.getElementById(\"myDropdown\").classList.toggle(\"show\");
+}
+
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName(\"dropdown-content\");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
+    <script>
+		$(document).ready(function()
+		{
+   			$('[data-toggle=\"popover\"]').popover();
+		});
+	</script>
+	<script>
+	function storico() {
+		window.location.href = 'storico.php';
+	}
+
+	function rubrica() {
+		window.location.href = 'rubrica.php';
+	}
+	</script>
+	</head>
+	
+	<body>
+	<center><h4>".date("d/m/y")."</h4></center>
+
+		<table width=\"100%\" >
+			<tr>
+				<td width=\"33%\">
+					<a href=\"dashboard.php\"><img src=\"Images/Logo.png\"></a>
+				</td>
+				
+				<td width=\"33%\">
+				<div class=\"dashboardFont\">
+						Storico
+					</div>
+				
+				</td>
+
+				<td width=\"33%\">  
+
+				<div class=\"navbar-collapse collapse\" style=\"padding-left: 30%;\">
+  					<ul class=\"nav navbar-nav\">
+    					<li class=\"dropdown\">
+     						 <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" ><div class=\"homeBar\">".$_username."<img src=\"Images/Img_utente.png\" class=\"img\" ></div></a>
+      					<ul class=\"dropdown-menu\">
+          					<!-- this dropdown menu item looks right -->
+        					
+
+        					<!-- this dropdown menu item (a logout form) does not -->
+        					<li><form action=\"logout.php\" method=\"post\"><button type=\"submit\" class=\"btn btn-link navbar-btn navbar-link\">Logout</button></form></li>
+        				</ul>
+    				</li>
+  </ul>
+</div>
+
+					
+				</td>
+			</tr>
+		</table>
+
+
+		<table width=\"100%\">
+
+			<tr>
+				<td colspan=\"3\">
+					<br>
+				</td>
+			</tr> 
+
+			<tr>
+				<td  class=\"dashboard\">
+
+<div class=\"dropdown\">
+<button onclick=\"myFunction()\" class=\"dropbtn btn btn-default btn-lg btn-block\" style=\"background-color: #ff5656; color: white; font-weight: bold;\" >Nuovo</button>
+  <div id=\"myDropdown\" class=\"dropdown-content\">
+    <a style=\"color: #ff5656;\" href=\"insLocale.php\">Locale</a>
+    <a style=\"color: #ff5656;\" href=\"insConcerto.php\">Concerto</a>
+    <a style=\"color: #ff5656;\" href=\"insDirettore.php\">Direttore artistico</a>
+  </div>
+</div>
+
+				</td>
+				
+				<td class=\"dashboard\">
+					<input type=\"button\" style=\"background-color: #ff5656; color: white; font-weight: bold;\" class=\"btn btn-default btn-lg btn-block\" name=\"\" value=\"Storico\" onclick=\"storico()\">
+				</td>
+
+				<td class=\"dashboard\">
+					<input type=\"button\" style=\"background-color: #ff5656; color: white; font-weight: bold;\" class=\"btn btn-default btn-lg btn-block\" name=\"\" value=\"Rubrica\" onclick=\"rubrica()\">
+				</td>
+			</tr>
+
+		</table>
+		<form action=\"storico.php\" method=\"POST\">";
 
 			    			for($i=0;$i<$nEventi;$i++)
 							{
 
-								echo"	<form action=\"storico.php\" method=\"POST\">
+								echo"	
 										<details>
 										<summary>".$cittaLocale[$i]." ".$dataConcerto[$i]."</summary>
 										<div>Ora di inizio: ".$oraConcerto[$i]."</div>
@@ -169,11 +426,142 @@ if(isset($_SESSION['username']))
 							echo "0 results";
 							}
 
-							echo"Eventi in ordine di guadagno decrescente";
-			    			
+							echo"
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<title>DPR Band</title>
+		<link href=\"CSS/style.css\" rel=\"stylesheet\" type=\"text/css\">
+		<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">
+
+		<!-- jQuery library -->
+		<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
+		
+		<!-- Latest compiled JavaScript -->
+		<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
+		<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">
+
+		<script>
+
+function myFunction() {
+    document.getElementById(\"myDropdown\").classList.toggle(\"show\");
+}
+
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName(\"dropdown-content\");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
+    <script>
+		$(document).ready(function()
+		{
+   			$('[data-toggle=\"popover\"]').popover();
+		});
+	</script>
+	<script>
+	function storico() {
+		window.location.href = 'storico.php';
+	}
+
+	function rubrica() {
+		window.location.href = 'rubrica.php';
+	}
+	</script>
+	</head>
+	
+	<body >
+
+
+
+
+	<center><h4>".date("d/m/y")."</h4></center>
+
+		<table width=\"100%\" >
+			<tr>
+				<td width=\"33%\">
+					<a href=\"dashboard.php\"><img src=\"Images/Logo.png\"></a>
+				</td>
+				
+				<td width=\"33%\">
+				<div class=\"dashboardFont\">
+						Storico
+					</div>
+				
+				</td>
+
+				<td width=\"33%\">  
+
+				<div class=\"navbar-collapse collapse\" style=\"padding-left: 30%;\">
+  					<ul class=\"nav navbar-nav\">
+    					<li class=\"dropdown\">
+     						 <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" ><div class=\"homeBar\">".$_username."<img src=\"Images/Img_utente.png\" class=\"img\" ></div></a>
+      					<ul class=\"dropdown-menu\">
+          					<!-- this dropdown menu item looks right -->
+        					
+
+        					<!-- this dropdown menu item (a logout form) does not -->
+        					<li><form action=\"logout.php\" method=\"post\"><button type=\"submit\" class=\"btn btn-link navbar-btn navbar-link\">Logout</button></form></li>
+        				</ul>
+    				</li>
+  </ul>
+</div>
+
+					
+				</td>
+			</tr>
+		</table>
+
+
+		<table width=\"100%\">
+
+			<tr>
+				<td colspan=\"3\">
+					<br>
+				</td>
+			</tr> 
+
+			<tr>
+				<td  class=\"dashboard\">
+
+<div class=\"dropdown\">
+<button onclick=\"myFunction()\" class=\"dropbtn btn btn-default btn-lg btn-block\" style=\"background-color: #ff5656; color: white; font-weight: bold;\" >Nuovo</button>
+  <div id=\"myDropdown\" class=\"dropdown-content\">
+    <a style=\"color: #ff5656;\" href=\"insLocale.php\">Locale</a>
+    <a style=\"color: #ff5656;\" href=\"insConcerto.php\">Concerto</a>
+    <a style=\"color: #ff5656;\" href=\"insDirettore.php\">Direttore artistico</a>
+  </div>
+</div>
+
+				</td>
+				
+				<td class=\"dashboard\">
+					<input type=\"button\" style=\"background-color: #ff5656; color: white; font-weight: bold;\" class=\"btn btn-default btn-lg btn-block\" name=\"\" value=\"Storico\" onclick=\"storico()\">
+				</td>
+
+				<td class=\"dashboard\">
+					<input type=\"button\" style=\"background-color: #ff5656; color: white; font-weight: bold;\" class=\"btn btn-default btn-lg btn-block\" name=\"\" value=\"Rubrica\" onclick=\"rubrica()\">
+				</td>
+			</tr>
+
+		</table>
+		<form action=\"storico.php\" method=\"POST\">";
+			    	
 			    			for($i=0;$i<$nEventi;$i++)
 							{
-								echo"	<form action=\"storico.php\" method=\"POST\">
+								echo"	
 										<details>
 										<summary>".$cittaLocale[$i]." ".$dataConcerto[$i]."</summary>
 										<div>Ora di inizio: ".$oraConcerto[$i]."</div>

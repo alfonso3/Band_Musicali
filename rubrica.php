@@ -146,7 +146,7 @@ window.onclick = function(event) {
 				
 				<td width=\"33%\">
 				<div class=\"dashboardFont\">
-						Dashboard
+						Rubrica
 					</div>
 				
 				</td>
