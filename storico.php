@@ -193,11 +193,26 @@ window.onclick = function(event) {
 
 
 
+<br><br><br>
 
 
 
-		
-<form action=\"storico.php\" method=\"POST\">";
+<form action=\"storico.php\" method=\"POST\">
+<table width=100% align=center>
+	<tr>
+		<td>
+			<table align=\"center\" width=\"70%\" class=\"tabella\" >
+				<tr>
+					<td style=\" background-color: #ff5656; border: solid 1px black;\">
+						<h2 align=\"center\" style=\"color: white\">Concertti</h2>
+					</td>
+				</tr>
+
+				<tr>
+				<td align=\"center\">	
+";
+
+
 							for($i=0;$i<$nEventi;$i++)
 							{
 								
@@ -208,19 +223,29 @@ window.onclick = function(event) {
 										<div>Locale: ".$nomeLocale[$i]."</div>
 										<div>Compenso pattuito: ".$compensoPattuitoConcerto[$i]."</div>
 										<div>Compenso effettivo ricevuto: ".$compensoEffettivoConcerto[$i]."</div>
-										</details>
+										</details><br>
 										";
 							}
 
 
 
-							echo"Ordina per guadagno: ";
+							echo" </td></tr></table></td><td>
+							<table align=\"center\" width=\"30%\" class=\"tabella\" >
+								<tr>
+									<td style=\" background-color: #ff5656; border: solid 1px black;\">
+										<h2 align=\"center\" style=\"color: white\">Filtra</h2>
+									</td>
+								</tr>
+								<tr>
+									<td align=center>
+
+							Ordina per guadagno:<br> ";
 							echo"<select name=\"ordinamento\">
 									  <option value=\"casuale\">-casuale-</option>
 							 		  <option value=\"crescente\">Crescente</option>
 									  <option value=\"decrescente\">Decrescente</option>
 								</select>
-									  <input type=\"submit\" name=\"button\" value=\"ricerca\"></form>";
+									  <br><input type=\"submit\" name=\"button\" value=\"ricerca\"></form></td></tr></table>";
 		
 
 
@@ -437,8 +462,24 @@ window.onclick = function(event) {
 
 
 
+<br><br><br>
 
-		<form action=\"storico.php\" method=\"POST\">";
+
+
+<form action=\"storico.php\" method=\"POST\">
+<table width=100% align=center>
+	<tr>
+		<td>
+			<table align=\"center\" width=\"70%\" class=\"tabella\" >
+				<tr>
+					<td style=\" background-color: #ff5656; border: solid 1px black;\">
+						<h2 align=\"center\" style=\"color: white\">Concertti</h2>
+					</td>
+				</tr>
+
+				<tr>
+				<td align=\"center\">	
+";
 
 			    			for($i=0;$i<$nEventi;$i++)
 							{
@@ -450,19 +491,29 @@ window.onclick = function(event) {
 										<div>Locale: ".$nomeLocale[$i]."</div>
 										<div>Compenso pattuito: ".$compensoPattuitoConcerto[$i]."</div>
 										<div>Compenso effettivo ricevuto: ".$compensoEffettivoConcerto[$i]."</div>
-										</details>
+										</details><br>
 										";
 							}
 
 
 
-							echo"Ordina per guadagno: ";
+							echo" </td></tr></table></td><td>
+							<table align=\"center\" width=\"30%\" class=\"tabella\" >
+								<tr>
+									<td style=\" background-color: #ff5656; border: solid 1px black;\">
+										<h2 align=\"center\" style=\"color: white\">Filtra</h2>
+									</td>
+								</tr>
+								<tr>
+									<td align=center>
+
+							Ordina per guadagno:<br> ";
 							echo"<select name=\"ordinamento\">
 									  <option value=\"casuale\">-casuale-</option>
 							 		  <option value=\"crescente\">Crescente</option>
 									  <option value=\"decrescente\">Decrescente</option>
 								</select>
-									  <input type=\"submit\" name=\"button\" value=\"ricerca\"></form>";
+									 <br><input type=\"submit\" name=\"button\" value=\"ricerca\"></form></td></tr></table>";
 					
 			    			
 
@@ -669,17 +720,24 @@ window.onclick = function(event) {
 
 
 
+<br><br><br>
 
 
 
+<form action=\"storico.php\" method=\"POST\">
+<table width=100% align=center>
+	<tr>
+		<td>
+			<table align=\"center\" width=\"70%\" class=\"tabella\" >
+				<tr>
+					<td style=\" background-color: #ff5656; border: solid 1px black;\">
+						<h2 align=\"center\" style=\"color: white\">Concertti</h2>
+					</td>
+				</tr>
 
-
-
-		<form action=\"storico.php\" method=\"POST\">";
-
-
-
-
+				<tr>
+				<td align=\"center\">	
+";
 
 
 
@@ -700,19 +758,29 @@ window.onclick = function(event) {
 										<div>Locale: ".$nomeLocale[$i]."</div>
 										<div>Compenso pattuito: ".$compensoPattuitoConcerto[$i]."</div>
 										<div>Compenso effettivo ricevuto: ".$compensoEffettivoConcerto[$i]."</div>
-										</details>
+										</details><br>
 										";
 							}
 
 
 
-							echo"Ordina per guadagno: ";
+							echo" </td></tr></table></td><td>
+							<table align=\"center\" width=\"30%\" class=\"tabella\" >
+								<tr>
+									<td style=\" background-color: #ff5656; border: solid 1px black;\">
+										<h2 align=\"center\" style=\"color: white\">Filtra</h2>
+									</td>
+								</tr>
+								<tr>
+									<td align=center>
+
+							Ordina per guadagno:<br> ";
 							echo"<select name=\"ordinamento\">
 									  <option value=\"casuale\">-casuale-</option>
 							 		  <option value=\"crescente\">Crescente</option>
 									  <option value=\"decrescente\">Decrescente</option>
 								</select>
-									  <input type=\"submit\" name=\"button\" value=\"ricerca\"></form>";
+									  <br><input type=\"submit\" name=\"button\" value=\"ricerca\"></form></td></tr></table>";
 			    			}
 
 			    			if($ordinamento=="casuale")
