@@ -34,25 +34,17 @@ else
 	    
 		}
 
-		$prompt_msg = "A quanto ammonta il pagamento effetivo";
-
-		function prompt($prompt_msg){
-        echo("<script type='text/javascript'> var answer = prompt('".$prompt_msg."'); </script>");
-
-        $answer = "<script type='text/javascript'> document.write(answer); </script>";
-        return($answer);
-    }	
 		
 
 		if(isset($_POST['paga']))
 		{
-			$controllo = $_POST['paga'];
-			$pagamento = prompt($prompt_msg);
-			$strPagamento = (string)$pagamento;
-			$sqlpag = "UPDATE rconcerto SET rconcerto.CompensoEffettivo = '$strPagamento' WHERE ID = '$controllo'";
-			mysqli_query($conn, $sqlpag);
-			$error = "error: " . $sqlpag."<br>". mysqli_error($conn);
-		}
+			$inputEffettivo = $_POST['inputEffettivo'];
+			$id = $_POST['paga'];
+			$sqlEffettivo = "UPDATE rconcerto SET CompensoEffettivo = '$inputEffettivo' WHERE ID = '$id'";
+			 mysqli_query($conn, $sqlEffettivo);
+			 	echo "<script>window.location.href = 'dashboard.php'</script>";
+	}
+
 
 		//query per eventi in programma
 
@@ -67,7 +59,7 @@ else
 		{
 		    while($row = mysqli_fetch_assoc($result))
 		    {
-		    	$arrayiIdEventi[]=$row["ID"];
+		    	$arrayIdEventi[]=$row["ID"];
 		    	$arrayNomeEventi[]=$row["Nome"];
 				$arrayCittaEventi[]=$row["Citta"];
 				$arrayDataEventi[]=$row["Data"];
@@ -238,7 +230,7 @@ window.onclick = function(event) {
 								<h3 align=\"center\">Data</h3>
 							</td>
 							<td style=\"background-color: #ff5656; color: white;\">
-								<h3 align=\"center\">Importo</h3>
+								<h3 align=\"center\">Compenso</h3>
 							</td>
 						</tr>
 
@@ -254,7 +246,15 @@ window.onclick = function(event) {
 							echo"</h4></td><td align=\"center\" width=\"30%\"><h4>";
 							echo $arrayDataEventi[$i]." ";
 							echo "</h4></td>
-							<td align=\"center\" width=\"10%\"><button type=\"submit\" style=\"width: 100%;\" name=\"paga\" value=\"".$arrayiIdEventi[$i-1]."\">Pagato</button></td></tr>";
+							<td align=\"center\" width=\"10%\">
+							   <details>
+							   	<summary><u>Ins. effettivo</u></summary>
+							   	<div><input type=text name=inputEffettivo placeholder=Compenso effettivo required></div>
+							   	<div><button type=\"submit\" style=\"width: 100%;\" name=\"paga\" value=\"".$arrayIdEventi[$i-1]."\">Invia</button></div>
+							   </details>
+								
+							</td>
+							</tr>";
 						}
 
 						echo"
