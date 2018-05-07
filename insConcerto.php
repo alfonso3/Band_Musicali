@@ -278,6 +278,9 @@ window.onclick = function(event) {
 				$fileLocandina=$_POST['file'];
 
 
+				
+
+
 
 
 					$sql = "INSERT INTO rconcerto(Data, Ora, compensoPattuito, compensoEffettivo, Locandina, ID_Band, ID_Locale) VALUES ('$data', '$ora', '$compensoPattuito', '$compensoEffettivo', '$fileLocandina', '$IDband','$IDlocale')";
@@ -290,7 +293,7 @@ window.onclick = function(event) {
 					      echo "<script>alert(\"".$error."\");</script>";
 					      //header("location: insConcerto.php");
 					  }
-					 
+					 header("location: dashboard.php");
 
 			}
 		}

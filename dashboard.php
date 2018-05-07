@@ -17,7 +17,7 @@ if (!$conn)
 }
 else
 {
-		//query per saldo totale
+		
 
 		$quotaTotale=0;
 		$sql1 = "SELECT CompensoEffettivo FROM rconcerto";
