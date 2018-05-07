@@ -84,6 +84,7 @@ echo"
 		
 		<!-- Latest compiled JavaScript -->
 		<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
+		<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">
 
 		<script>
 /* When the user clicks on the button, 
@@ -248,9 +249,9 @@ window.onclick = function(event) {
 							echo "</h4></td>
 							<td align=\"center\" width=\"10%\">
 							   <details>
-							   	<summary><u>Ins. effettivo</u></summary>
-							   	<div><input type=text name=inputEffettivo placeholder=Compenso effettivo required></div>
-							   	<div><button type=\"submit\" style=\"width: 100%;\" name=\"paga\" value=\"".$arrayIdEventi[$i-1]."\">Invia</button></div>
+							   	<summary><h4><u>Ins. effettivo</u></h4></summary>
+							   	<div><input type=text class=\"w3-input w3-animate-input\" name=inputEffettivo placeholder=Compenso effettivo></div>
+							   	<div><button  type=\"submit\" style=\"width: 100%;\" name=\"paga\" value=\"".$arrayIdEventi[$i-1]."\">Invia</button></div>
 							   </details>
 								
 							</td>

@@ -2,6 +2,7 @@
 session_start();
 if(isset($_SESSION['username']))
 {
+	$_username= $_SESSION['username'];
 	$dbHost = "127.0.0.1";
   	$dbUsername = "admin";
   	$dbPassword = "admin";
@@ -109,7 +110,7 @@ window.onclick = function(event) {
 				
 				<td width=\"33%\">
 				<div class=\"dashboardFont\">
-						Dashboard
+						Direttore artistico
 					</div>
 				
 				</td>
@@ -168,14 +169,44 @@ window.onclick = function(event) {
 				</td>
 			</tr>
 
-		</table>
-		    echo"
+		</table>";
+		    echo"<br><br><br>
 			<form method =\"POST\" action=\"insDirettore.php\">
-			<input type=\"text\" name=\"nome\" placeholder=\"nome\" required>
-			<input type=\"text\" name=\"cognome\" placeholder=\"cognome\" required>
-			<input type=\"text\" name=\"email\" placeholder=\"email\" required>
-			<input type=\"text\" name=\"telefono\" placeholder=\"telefono\" required>
-			<input type =\"submit\" name=\"button\">
+
+			<table align=\"center\" width=\"60%\" style=\"font-weight: bold;\" class=\"tabella\">
+			<tr>
+							<td colspan=\"2\" style=\" background-color: #ff5656; border: solid 1px black;\" >
+								<h2 align=\"center\" style=\"color: white\">Aggiungi<br></h2>
+							</td>
+			</tr>
+			
+			<tr>
+				<td colspan=\"2\"><br><br><br></td>
+			</tr>
+
+			<tr>
+						<td width=\"10%\" style=\"text-align: center;\"><input type=\"text\" name=\"nome\" placeholder=\"nome\" required></td>
+						<td width=\"10%\" style=\"text-align: center;\"><input type=\"text\" name=\"cognome\" placeholder=\"cognome\" required></td>
+			</tr>
+			<tr>
+				<td colspan=\"2\"><br><br><br></td>
+			</tr>
+			<tr>
+						<td width=\"10%\" style=\"text-align: center;\"><input type=\"text\" name=\"email\" placeholder=\"email\" required></td>
+						<td width=\"10%\" style=\"text-align: center;\"><input type=\"text\" name=\"telefono\" placeholder=\"telefono\" required></td>
+			</tr>
+			<tr>
+				<td><br><br><br></td>
+			</tr>
+			<tr>
+				<td style=\"text-align: center;\" colspan=\"2\"><input type =\"submit\" name=\"button\"></td>
+			</tr>
+			</table>
+			
+			
+			
+			
+			
 			</form>";
 	}
 }

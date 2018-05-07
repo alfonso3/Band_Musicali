@@ -180,6 +180,7 @@ window.onclick = function(event) {
   <div id=\"myDropdown\" class=\"dropdown-content\">
     <a style=\"color: #ff5656;\" href=\"insLocale.php\">Locale</a>
     <a style=\"color: #ff5656;\" href=\"insConcerto.php\">Concerto</a>
+    <a style=\"color: #ff5656;\" href=\"insDirettore.php\">Direttore artistico</a>
   </div>
 </div>
 
@@ -213,11 +214,11 @@ window.onclick = function(event) {
 			<td><br><br></td>
 			</tr>
 			<tr>
-			<td width=\"10%\" style=\"text-align: center;\"><br><input type=\"date\" name=\"data\" required></td>
+			<td width=\"10%\" style=\"text-align: center;\"><input type=\"date\" name=\"data\" required></td>
 			<td></td>
-			<td width=\"10%\" style=\"text-align: center;\"><br><input type=\"time\" name=\"ora\" required></td>
+			<td width=\"10%\" style=\"text-align: center;\"><input type=\"time\" name=\"ora\" required></td>
 			<td></td>
-			<td width=\"10%\" style=\"text-align: center;\">Locale<br><select name=\"locale\">";
+			<td width=\"10%\" style=\"text-align: center;\"><select name=\"locale\">";
 						for($i=0;$i<$nLocali; $i++)
 						{
 							echo "<option value=\"".$idLocale[$i]."\">".$locali[$i]."</option>";
@@ -228,11 +229,11 @@ window.onclick = function(event) {
 			<td><br><br><br></td>
 			</tr>
 			<tr>
-			<td width=\"10%\" style=\"text-align: center;\"><br><input type=\"text\" name=\"compensoEffettivo\" placeholder=\"Compenso effettivo\"></td>
+			<td width=\"10%\" style=\"text-align: center;\"><input type=\"text\" name=\"compensoEffettivo\" placeholder=\"Compenso effettivo\"></td>
 			<td></td>
-			<td width=\"10%\" style=\"text-align: center;\"><br><input type=\"text\" name=\"compensoPattuito\" placeholder=\"Compenso pattuito\" required></td>
+			<td width=\"10%\" style=\"text-align: center;\"><input type=\"text\" name=\"compensoPattuito\" placeholder=\"Compenso pattuito\" required></td>
 			<td></td>
-			<td width=\"10%\" style=\"text-align: center;\">Band<br><select name=\"band\">";
+			<td width=\"10%\" style=\"text-align: center;\"><select name=\"band\">";
 						for($i=0;$i<$nBand; $i++)
 						{
 							echo "<option value=\"".$idBand[$i]."\">".$band[$i]."</option>";
@@ -245,7 +246,10 @@ window.onclick = function(event) {
 			</tr>
 
 			<tr>
-				<td style=\"text-align: center;\" colspan=\"5\"><input type =\"file\" name=\"file\"></td>
+				<td align=\"center\" colspan=\"5\"><input type =\"file\" name=\"file\"></td>
+			</tr>
+			<tr>
+			<td><br><br></td>
 			</tr>
 
 			<tr>

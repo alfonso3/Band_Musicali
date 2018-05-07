@@ -149,6 +149,7 @@ window.onclick = function(event) {
   <div id=\"myDropdown\" class=\"dropdown-content\">
     <a style=\"color: #ff5656;\" href=\"insLocale.php\">Locale</a>
     <a style=\"color: #ff5656;\" href=\"insConcerto.php\">Concerto</a>
+    <a style=\"color: #ff5656;\" href=\"insDirettore.php\">Direttore artistico</a>
   </div>
 </div>
 
