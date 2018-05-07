@@ -1,8 +1,4 @@
-<html>
-<head>
-	<title>Benvenuto su DprBand!</title>
-</head>
-<body>
+
   <?php
 	session_start();
 	$dbHost = "127.0.0.1";
@@ -209,11 +205,22 @@ window.onclick = function(event) {
 
 	  if(!isset($_POST["btnInviaRegione"])){
 
+	  	echo "<br><br><br><table width=100% >
+	  	<tr>
+	  	<td width=70%>
+
+	  	<table width=50%  class=\"tabella\" align=center >
+	  	<tr><td style=\"background-color: #ff5656; color: white; background-color: #ff5656; border: solid 1px black;\" width=70%><h3 align=\"center\" >Contati</h3></td></tr>
+	  	<tr>
+	  	<td width=70% align=center><br>
+	  	<form name=dettagli method=post action=rubrica.php>	
+	  	";
+
 		for($i=0;$i<mysqli_num_rows($result);$i++){
 				for($k=0;$k<mysqli_num_rows($result2);$k++){
 					if($arrayIDSecondario[$i]===$arrayIDDir[$k])
 					{
-						echo "<form name=dettagli method=post action=rubrica.php>
+						echo "
 							<details>
 							<summary>". $arrayNomeLocale[$i] . ", " . $arrayCittàLocale[$i]  . "</summary>
 							<div>Indirizzo:&ensp;$arrayIndirizzoLocale[$i]</div>
@@ -224,14 +231,19 @@ window.onclick = function(event) {
 								<div>Email:&ensp;$arrayEmailDir[$k]</div>
 								<div>Tel:&ensp;$arrayTelefonoDir[$k]</div>
 							</details>
-						</details><br>";	
+						</details><br><br>";	
 					}
 				}	
 			}
 
 
 
-			echo "<select name=regione>
+			echo "</td></tr></table></td><td  width=30%><table width=20%  align=center style=\"vertical-align: text-top;\" class=\"tabella\"> 
+
+	  	<tr>
+	  	<td style=\"background-color: #ff5656; color: white; background-color: #ff5656; border: solid 1px black;\" width=30%><h3 align=\"center\" >Filtra</h3></td>
+	  	</tr><td width=30% align=center>
+	  	<select name=regione>
 					<option value=tutti>Tutti</option>";
 
 					for($i=0;$i<count($arrayRegioni);$i++)
@@ -240,16 +252,42 @@ window.onclick = function(event) {
 					}
 					echo "</select>	
 					<input type=submit name=btnInviaRegione>
-					</form>";		
+					</form></td>	</tr></table></td></tr></table>";		
 	  }
+
+
+
+
+
+
+
+
+
+
+
+
 	  else
 	  {
+
+	  	
+
 	  	if($_POST["regione"]==='tutti'){
+
+	  		echo "<br><br><br><table width=100% >
+	  	<tr>
+	  	<td width=70%>
+
+	  	<table width=50%  class=\"tabella\" align=center>
+	  	<tr><td style=\"background-color: #ff5656; color: white; background-color: #ff5656; border: solid 1px black;\" width=70%><h3 align=\"center\" >Contati</h3></td></tr>
+	  	<tr>
+	  	<td width=70% align=center><br>
+<form name=dettagli method=post action=rubrica.php>
+	  	";
 		for($i=0;$i<mysqli_num_rows($result);$i++){
 				for($k=0;$k<mysqli_num_rows($result2);$k++){
 					if($arrayIDSecondario[$i]===$arrayIDDir[$k])
 					{
-						echo "<form name=dettagli method=post action=rubrica.php>
+						echo "
 							<details>
 							<summary>". $arrayNomeLocale[$i] . ", " . $arrayCittàLocale[$i]  . "</summary>
 							<div>Indirizzo:&ensp;$arrayIndirizzoLocale[$i]</div>
@@ -260,14 +298,19 @@ window.onclick = function(event) {
 								<div>Email:&ensp;$arrayEmailDir[$k]</div>
 								<div>Tel:&ensp;$arrayTelefonoDir[$k]</div>
 							</details>
-						</details><br>";	
+						</details><br><br>";	
 					}
 				}	
 			}
 
 
 
-			echo "<select name=regione>
+			echo "</td></tr></table> </td><td  width=30%><table width=20%  align=center style=\"vertical-align: text-top;\" class=\"tabella\"> 
+
+	  	<tr>
+	  	<td style=\"background-color: #ff5656; color: white; background-color: #ff5656; border: solid 1px black;\" width=30%><h3 align=\"center\" >Filtra</h3></td>
+	  	</tr><td width=30% align=center>
+	  	<select name=regione>
 					<option value=tutti>Tutti</option>";
 
 					for($i=0;$i<count($arrayRegioni);$i++)
@@ -276,9 +319,31 @@ window.onclick = function(event) {
 					}
 					echo "</select>	
 					<input type=submit name=btnInviaRegione>
-					</form>";		
+					</form> </td>	</tr></table></td></tr></table";		
 	  	}
 	  	else{
+
+
+
+
+
+
+	  	echo "<br><br><br><table width=100% >
+	  	<tr>
+	  	<td width=70%>
+
+	  	<table width=50%  class=\"tabella\" align=center>
+	  	<tr><td style=\"background-color: #ff5656; color: white; background-color: #ff5656; border: solid 1px black;\" width=70%><h3 align=\"center\" >Contati</h3></td></tr>
+	  	<tr>
+	  	<td width=70% align=center><br><form name=dettagli method=post action=rubrica.php>
+	  	";
+
+
+
+
+
+
+
 		  	$regione = $_POST["regione"];
 		  	echo $regione ;
 
@@ -310,7 +375,7 @@ window.onclick = function(event) {
 					for($k=0;$k<mysqli_num_rows($result2);$k++){
 						if($arrayIDSecondario[$i]===$arrayIDDir[$k])
 						{
-							echo "<form name=dettagli method=post action=rubrica.php>
+							echo "
 								<details>
 								<summary>". $arrayNomeLocale[$i] . ", " . $arrayCittàLocale[$i]  . "</summary>
 								<div>Indirizzo:&ensp;$arrayIndirizzoLocale[$i]</div>
@@ -321,12 +386,16 @@ window.onclick = function(event) {
 									<div>Email:&ensp;$arrayEmailDir[$k]</div>
 									<div>Tel:&ensp;$arrayTelefonoDir[$k]</div>
 								</details>
-							</details><br>";	
+							</details><br><br>";	
 						}
 					}	
 				}		 
 
-				echo "<select name=regione>
+				echo "</td></tr></table> </td><td  width=30%><table width=20%  align=center style=\"vertical-align: text-top;\" class=\"tabella\"> 
+
+	  	<tr>
+	  	<td style=\"background-color: #ff5656; color: white; background-color: #ff5656; border: solid 1px black;\" width=30%><h3 align=\"center\" >Filtra</h3></td>
+	  	</tr><td width=30% align=center><select name=regione>
 				<option value=$regione>$regione</option>";
 
 				for($i=0;$i<count($arrayRegioni);$i++)
@@ -341,7 +410,7 @@ window.onclick = function(event) {
 				echo "<option value=tutti>Tutti</option>
 				</select>	
 				<input type=submit name=btnInviaRegione>
-				</form>";	
+				</form> </td>	</tr></table></td></tr></table";	
 	  	}
 	  }	
 			
@@ -353,4 +422,4 @@ window.onclick = function(event) {
   ?>
 
 </body>
-</html>
+</html>	
