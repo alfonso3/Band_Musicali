@@ -33,14 +33,25 @@ else
 	    {
 	    
 		}
-		echo "<script type=\"text/javascript\">alert(\"fuori\");</script>";
+
+		$prompt_msg = "A quanto ammonta il pagamento effetivo";
+
+		function prompt($prompt_msg){
+        echo("<script type='text/javascript'> var answer = prompt('".$prompt_msg."'); </script>");
+
+        $answer = "<script type='text/javascript'> document.write(answer); </script>";
+        return($answer);
+    }	
+		
 
 		if(isset($_POST['paga']))
 		{
-			echo "<script type=\"text/javascript\">alert(\"dentro\");</script>";
-			echo $_POST['paga'];
-			$sqlpag = "UPDATE `rconcerto` SET `CompensoEffettivo`=[value-5] WHERE 'Data' = ";
+			$controllo = $_POST['paga'];
+			$pagamento = prompt($prompt_msg);
+			$strPagamento = (string)$pagamento;
+			$sqlpag = "UPDATE rconcerto SET rconcerto.CompensoEffettivo = '$strPagamento' WHERE ID = '$controllo'";
 			mysqli_query($conn, $sqlpag);
+			$error = "error: " . $sqlpag."<br>". mysqli_error($conn);
 		}
 
 		//query per eventi in programma
@@ -49,20 +60,20 @@ else
 		$arrayCittaEventi[]="";
 		$arrayDataEventi[]="";
 
-		$sql2 = "SELECT rlocale.Nome, rlocale.Citta, rconcerto.Data FROM rconcerto INNER JOIN rlocale ON rconcerto.ID_Locale = rlocale.ID WHERE rconcerto.CompensoEffettivo='0'";
+		$sql2 = "SELECT rconcerto.ID, rlocale.Nome, rlocale.Citta, rconcerto.Data FROM rconcerto INNER JOIN rlocale ON rconcerto.ID_Locale = rlocale.ID WHERE rconcerto.CompensoEffettivo='0'";
 
 		$result = mysqli_query($conn, $sql2);
 		if (mysqli_num_rows($result) > 0) 
 		{
 		    while($row = mysqli_fetch_assoc($result))
 		    {
+		    	$arrayiIdEventi[]=$row["ID"];
 		    	$arrayNomeEventi[]=$row["Nome"];
 				$arrayCittaEventi[]=$row["Citta"];
 				$arrayDataEventi[]=$row["Data"];
 			} 
 		}
 }
-
 
 
 //METTI QUA IL TUO HTML -------------------------->
@@ -182,6 +193,7 @@ window.onclick = function(event) {
   <div id=\"myDropdown\" class=\"dropdown-content\">
     <a style=\"color: #ff5656;\" href=\"insLocale.php\">Locale</a>
     <a style=\"color: #ff5656;\" href=\"insConcerto.php\">Concerto</a>
+    <a style=\"color: #ff5656;\" href=\"insDirettore.php\">Direttore artistico</a>
   </div>
 </div>
 
@@ -242,7 +254,7 @@ window.onclick = function(event) {
 							echo"</h4></td><td align=\"center\" width=\"30%\"><h4>";
 							echo $arrayDataEventi[$i]." ";
 							echo "</h4></td>
-							<td align=\"center\" width=\"10%\"><button type=\"submit\" style=\"width: 100%;\" name=\"paga\" value=\"".$arrayDataEventi[$i]."\">Pagato</button></td></tr>";
+							<td align=\"center\" width=\"10%\"><button type=\"submit\" style=\"width: 100%;\" name=\"paga\" value=\"".$arrayiIdEventi[$i-1]."\">Pagato</button></td></tr>";
 						}
 
 						echo"

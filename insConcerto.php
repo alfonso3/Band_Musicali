@@ -245,6 +245,10 @@ window.onclick = function(event) {
 			</tr>
 
 			<tr>
+				<td style=\"text-align: center;\" colspan=\"5\"><input type =\"file\" name=\"file\"></td>
+			</tr>
+
+			<tr>
 				<td style=\"text-align: center;\" colspan=\"5\"><input type =\"submit\" name=\"button\"></td>
 			</tr>
 
