@@ -210,7 +210,7 @@ window.onclick = function(event) {
 	  	<td width=70%>
 
 	  	<table width=50%  class=\"tabella\" align=center >
-	  	<tr><td style=\"background-color: #ff5656; color: white; background-color: #ff5656; border: solid 1px black;\" width=70%><h3 align=\"center\" >Contati</h3></td></tr>
+	  	<tr><td style=\"background-color: #ff5656; color: white; background-color: #ff5656; border: solid 1px black;\" width=70%><h3 align=\"center\" >Contatti</h3></td></tr>
 	  	<tr>
 	  	<td width=70% align=center><br>
 	  	<form name=dettagli method=post action=rubrica.php>	
@@ -278,7 +278,7 @@ window.onclick = function(event) {
 	  	<td width=70%>
 
 	  	<table width=50%  class=\"tabella\" align=center>
-	  	<tr><td style=\"background-color: #ff5656; color: white; background-color: #ff5656; border: solid 1px black;\" width=70%><h3 align=\"center\" >Contati</h3></td></tr>
+	  	<tr><td style=\"background-color: #ff5656; color: white; background-color: #ff5656; border: solid 1px black;\" width=70%><h3 align=\"center\" >Contatti</h3></td></tr>
 	  	<tr>
 	  	<td width=70% align=center><br>
 <form name=dettagli method=post action=rubrica.php>
@@ -333,7 +333,7 @@ window.onclick = function(event) {
 	  	<td width=70%>
 
 	  	<table width=50%  class=\"tabella\" align=center>
-	  	<tr><td style=\"background-color: #ff5656; color: white; background-color: #ff5656; border: solid 1px black;\" width=70%><h3 align=\"center\" >Contati</h3></td></tr>
+	  	<tr><td style=\"background-color: #ff5656; color: white; background-color: #ff5656; border: solid 1px black;\" width=70%><h3 align=\"center\" >Contatti</h3></td></tr>
 	  	<tr>
 	  	<td width=70% align=center><br><form name=dettagli method=post action=rubrica.php>
 	  	";

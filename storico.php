@@ -178,6 +178,25 @@ window.onclick = function(event) {
 			</tr>
 
 		</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
 <form action=\"storico.php\" method=\"POST\">";
 							for($i=0;$i<$nEventi;$i++)
 							{
@@ -202,7 +221,36 @@ window.onclick = function(event) {
 									  <option value=\"decrescente\">Decrescente</option>
 								</select>
 									  <input type=\"submit\" name=\"button\" value=\"ricerca\"></form>";
-					
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		}
 		else
 		{	
@@ -367,6 +415,29 @@ window.onclick = function(event) {
 			</tr>
 
 		</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		<form action=\"storico.php\" method=\"POST\">";
 
 			    			for($i=0;$i<$nEventi;$i++)
@@ -394,6 +465,36 @@ window.onclick = function(event) {
 									  <input type=\"submit\" name=\"button\" value=\"ricerca\"></form>";
 					
 			    			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			    			}
 
 			    			if($ordinamento == "decrescente")
@@ -557,7 +658,38 @@ window.onclick = function(event) {
 			</tr>
 
 		</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		<form action=\"storico.php\" method=\"POST\">";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			    	
 			    			for($i=0;$i<$nEventi;$i++)
 							{
@@ -588,6 +720,32 @@ window.onclick = function(event) {
 			    				header("location: storico.php");
 			    			}
 			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 		}
 	}
