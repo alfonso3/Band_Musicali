@@ -345,7 +345,7 @@ window.onclick = function(event) {
 
 
 		  	$regione = $_POST["regione"];
-		  	echo $regione ;
+		  	echo "<h4>".$regione."</h4><br>" ;
 
 			$sql = "SELECT * FROM rlocale WHERE Regione = '$regione'";
 			$result = mysqli_query($conn, $sql);
