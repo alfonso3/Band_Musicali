@@ -63,7 +63,7 @@ else
 			 mysqli_query($conn, $sqlEffettivo);
 			
 			 
-			// echo "<script>window.location.href = 'dashboard.php'</script>";
+			echo "<script>window.location.href = 'dashboard.php'</script>";
 		}
 
 
