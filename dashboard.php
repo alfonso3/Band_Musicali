@@ -283,6 +283,7 @@ window.onclick = function(event) {
 					</table>
 					</form>
 				</td>
+							<a href=locandina.php>Alfo mitt u botton</a>
 
 				<td>
 					<table width=\"60%\" align=\"center\" border=\"1px\">

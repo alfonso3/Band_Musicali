@@ -246,7 +246,7 @@ window.onclick = function(event) {
 			</tr>
 
 			<tr>
-				<td align=\"left\" colspan=\"5\"><input type =\"text\" name=\"url\" placeholder=Url locandina></td>
+				<td align=\"left\" colspan=\"5\"><input type =\"text\" name=\"url\" placeholder=immagine.formato locandina> NB: L'immagine deve essere presente sul localhost!</td>
 			</tr>
 			<tr>
 			<td><br><br></td>
