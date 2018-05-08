@@ -214,9 +214,9 @@ window.onclick = function(event) {
 			<td><br><br></td>
 			</tr>
 			<tr>
-			<td width=\"10%\" style=\"text-align: center;\"><input type=\"date\" name=\"data\" required></td>
+			<td width=\"10%\" style=\"text-align: left;\"><input type=\"date\" name=\"data\" required></td>
 			<td></td>
-			<td width=\"10%\" style=\"text-align: center;\"><input type=\"time\" name=\"ora\" required></td>
+			<td width=\"10%\" style=\"text-align: left;\"><input type=\"time\" name=\"ora\" required></td>
 			<td></td>
 			<td width=\"10%\" style=\"text-align: center;\"><select name=\"locale\">";
 						for($i=0;$i<$nLocali; $i++)
@@ -233,7 +233,7 @@ window.onclick = function(event) {
 			<td></td>
 			<td width=\"10%\" style=\"text-align: center;\"><input type=\"text\" name=\"compensoPattuito\" placeholder=\"Compenso pattuito\" required></td>
 			<td></td>
-			<td width=\"10%\" style=\"text-align: center;\"><select name=\"band\">";
+			<td width=\"10%\" style=\"text-align: left;\"><select name=\"band\">";
 						for($i=0;$i<$nBand; $i++)
 						{
 							echo "<option value=\"".$idBand[$i]."\">".$band[$i]."</option>";
@@ -246,7 +246,7 @@ window.onclick = function(event) {
 			</tr>
 
 			<tr>
-				<td align=\"center\" colspan=\"5\"><input type =\"file\" name=\"file\"></td>
+				<td align=\"left\" colspan=\"5\"><input type =\"text\" name=\"url\" placeholder=Url locandina></td>
 			</tr>
 			<tr>
 			<td><br><br></td>
@@ -275,7 +275,8 @@ window.onclick = function(event) {
 				$compensoEffettivo=$_POST['compensoEffettivo'];
 				$IDlocale=$_POST['locale'];
 				$IDband=$_POST['band'];
-				$fileLocandina=$_POST['file'];
+				//$fileLocandina=$_POST['file'];
+				$url=$_POST['url'];
 
 
 				
@@ -283,7 +284,8 @@ window.onclick = function(event) {
 
 
 
-					$sql = "INSERT INTO rconcerto(Data, Ora, compensoPattuito, compensoEffettivo, Locandina, ID_Band, ID_Locale) VALUES ('$data', '$ora', '$compensoPattuito', '$compensoEffettivo', '$fileLocandina', '$IDband','$IDlocale')";
+					$sql = "INSERT INTO rconcerto(Data, Ora, compensoPattuito, compensoEffettivo, Locandina, ID_Band, ID_Locale) VALUES ('$data', '$ora', '$compensoPattuito', '$compensoEffettivo', '$url', '$IDband','$IDlocale')";
+					/*$sql = "INSERT INTO rconcerto(Data, Ora, compensoPattuito, compensoEffettivo, ID_Band, ID_Locale) VALUES ('$data', '$ora', '$compensoPattuito', '$compensoEffettivo', '$IDband','$IDlocale')"; giusta senza locandina*/
 
 						if (mysqli_query($conn, $sql)) {
 					      echo "<script>alert(\"Concerto aggiunto\");</script>";

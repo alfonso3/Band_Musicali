@@ -204,7 +204,7 @@ window.onclick = function(event) {
 			<table align=\"center\" width=\"70%\" class=\"tabella\" >
 				<tr>
 					<td style=\" background-color: #ff5656; border: solid 1px black;\">
-						<h2 align=\"center\" style=\"color: white\">Concertti</h2>
+						<h2 align=\"center\" style=\"color: white\">Concerti</h2>
 					</td>
 				</tr>
 
@@ -245,7 +245,7 @@ window.onclick = function(event) {
 							 		  <option value=\"crescente\">Crescente</option>
 									  <option value=\"decrescente\">Decrescente</option>
 								</select>
-									  <br><input type=\"submit\" name=\"button\" value=\"ricerca\"></form></td></tr></table>";
+									  <br><input type=\"submit\" name=\"button\" value=\"Ricerca\"></form></td></tr></table>";
 		
 
 

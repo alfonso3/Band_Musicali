@@ -282,7 +282,34 @@ window.onclick = function(event) {
 				</td>
 			</tr>
 
-		</table>
+		</table><br>
+
+		<details>
+			  <summary><u><h4 align=\"center\" width=\"30%\">Visualizza locandina</td></h4><u></summary>
+			  <div>
+			  	<select name=\"locandinaConcerto\">";
+				  $sqlLoc = "SELECT rconcerto.ID, rlocale.Nome, rlocale.Citta, rconcerto.Data, rconcerto.Locandina FROM rconcerto INNER JOIN rlocale ON rconcerto.ID_Locale = rlocale.ID WHERE rconcerto.Locandina!=''";
+
+					$resultLoc = mysqli_query($conn, $sqlLoc);
+					if (mysqli_num_rows($resultLoc) > 0) 
+					{
+					    while($row = mysqli_fetch_assoc($resultLoc))
+					    {
+					    	$arrayIdEventiLoc[]=$row["ID"];
+					    	$arrayNomeLocaleLoc[]=$row["Nome"];
+							$arrayCittaLocaleLoc[]=$row["Citta"];
+							$arrayDataConcertoLoc[]=$row["Data"];
+						} 
+					}
+						for($w=0;$w<count($arrayIdEventiLoc); $w++)
+						{
+							echo "<option value=\"".$arrayIdEventiLoc[$w]."\">".$arrayIdEventiLoc[$w]."</option>";
+						}
+						echo"</select></td>
+			  </div>
+			  <div></div>
+	    </details>
+			
 
 		
 
