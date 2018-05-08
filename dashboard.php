@@ -145,6 +145,9 @@ window.onclick = function(event) {
 	function rubrica() {
 		window.location.href = 'rubrica.php';
 	}
+	function Locandine() {
+		window.location.href = 'locandina.php';
+	}
 	</script>
 	</head>
 	
@@ -271,7 +274,7 @@ window.onclick = function(event) {
 							<td align=\"center\" width=\"10%\">
 							   <details>
 							   	<summary><h4><u>Ins. effettivo</u></h4></summary>
-							   	<div><input type=text class=\"w3-input w3-animate-input\" name=inputEffettivo$i value=\"\"></div>
+							   	<div><input type=text class=\"w3-input w3-animate-input\" placeholder=\"Importo\" name=inputEffettivo$i value=\"\"></div>
 							   	<div><button  type=\"submit\" style=\"width: 100%;\" name=\"paga\" value=\"".$arrayIdEventi[$i-1]."\">Invia</button></div>
 							   </details>
 								
@@ -283,8 +286,7 @@ window.onclick = function(event) {
 					</table>
 					</form>
 				</td>
-							<a href=locandina.php>Alfo mitt u botton</a>
-
+							
 				<td>
 					<table width=\"60%\" align=\"center\" border=\"1px\">
 
@@ -304,13 +306,17 @@ window.onclick = function(event) {
 				</td>
 			</tr>
 
-		</table><br>
+		</table><br><br><br><br><br>
 
-
-			
-
-		
-
+<table align=center>
+<tr>
+<td>
+<div style=\"width:100%;\">
+<input  type=\"button\" style=\"background-color: #ff5656; color: white; font-weight: bold;\" class=\"btn btn-default btn-lg btn-block\" name=\"\" value=\"Locandine\" onclick=\"Locandine()\">
+	</div>	
+</td>
+</tr>
+</table>
 	</body>
 	
 	</html>
